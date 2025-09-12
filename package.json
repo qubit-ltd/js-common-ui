@@ -1,6 +1,6 @@
 {
   "name": "@qubit-ltd/common-ui",
-  "version": "1.15.1",
+  "version": "1.15.2",
   "description": "A JavaScript abstraction layer for common UI components.",
   "author": "Haixing Hu (starfish.hu@gmail.com)",
   "license": "Apache-2.0",
@@ -47,8 +47,8 @@
     "deploy:all": "npm run deploy && npm publish --registry='https://registry.npmjs.org/' --access public"
   },
   "peerDependencies": {
-    "@babel/runtime": "^7.26.0",
-    "@qubit-ltd/logging": "^1.4.9"
+    "@babel/runtime": "^7.28.4",
+    "@qubit-ltd/logging": "^1.4.12"
   },
   "devDependencies": {
     "@babel/core": "^7.28.4",
