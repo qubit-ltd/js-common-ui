@@ -1,6 +1,6 @@
 {
   "name": "@qubit-ltd/common-ui",
-  "version": "1.14.2",
+  "version": "1.15.0",
   "description": "A JavaScript abstraction layer for common UI components.",
   "author": "Haixing Hu (starfish.hu@gmail.com)",
   "license": "Apache-2.0",
