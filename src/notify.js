@@ -109,12 +109,27 @@ class Notify {
    * @param {NotifyImpl} impl
    *     `Notify`类的具体实现对象。这个参数必须是一个`NotifyImpl`类的子类的实例，不同的
    *     `NotifyImpl`类的实例可以实现不同的UI框架的弹出式消息消息功能。
+   * @param {Object} config
+   *     可选的配置对象，支持以下属性：
+   *     - `iconClassMap` {Object} 图标CSS类映射表，格式为：
+   *       {
+   *         'info': 'fa-solid fa-info',
+   *         'error': 'fa-solid fa-times-circle',
+   *         'warn': 'fa-solid fa-exclamation-triangle',
+   *         'success': 'fa-solid fa-check-circle',
+   *         'debug': 'fa-solid fa-bug'
+   *       }
+   * @see ConfigurableUI
    */
-  setImpl(impl) {
+  setImpl(impl, config = null) {
     if (!(impl instanceof NotifyImpl)) {
       throw new Error('参数`impl`必须是`NotifyImpl`的子类的实例');
     }
     this.impl = impl;
+    // 如果提供了配置，则应用到实现对象
+    if (config) {
+      this.impl.configure(config);
+    }
   }
 
   /**

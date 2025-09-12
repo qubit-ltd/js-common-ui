@@ -6,6 +6,7 @@
 //    All rights reserved.
 //
 ////////////////////////////////////////////////////////////////////////////////
+import ConfigurableUI from './configurable-ui';
 
 /**
  * 弹出式确认对话框的具体实现类。
@@ -14,7 +15,7 @@
  *
  * @author 胡海星
  */
-class ConfirmImpl {
+class ConfirmImpl extends ConfigurableUI {
   /**
    * 显示一个弹出式确认对话框。
    *

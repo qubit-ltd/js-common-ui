@@ -6,6 +6,7 @@
 //    All rights reserved.
 //
 ////////////////////////////////////////////////////////////////////////////////
+import ConfigurableUI from './configurable-ui';
 
 /**
  * 载入提示遮盖层的具体实现类。
@@ -14,7 +15,7 @@
  *
  * @author 胡海星
  */
-class LoadingImpl {
+class LoadingImpl extends ConfigurableUI {
   /**
    * 显示一个载入遮盖层，提示正在载入中。
    *

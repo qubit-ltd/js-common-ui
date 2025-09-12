@@ -4,7 +4,10 @@
     "recurse": true,
     "verbose": true,
     "encoding": "utf8",
-    "template": "./node_modules/@qubit-ltd/jsdoc-minami"
+    "template": "./node_modules/@qubit-ltd/jsdoc-theme",
+    "theme_opts": {
+      "language": "zh"
+    }
   },
   "recurseDepth": 10,
   "source": {

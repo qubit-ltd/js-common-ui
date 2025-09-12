@@ -11,6 +11,7 @@ import confirm from './confirm';
 import loading from './loading';
 import prompt from './prompt';
 import notify from './notify';
+import ConfigurableUI from './configurable-ui';
 import AlertImpl from './alert-impl';
 import ConfirmImpl from './confirm-impl';
 import LoadingImpl from './loading-impl';
@@ -27,6 +28,7 @@ export {
   loading,
   prompt,
   notify,
+  ConfigurableUI,
   AlertImpl,
   ConfirmImpl,
   LoadingImpl,

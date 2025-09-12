@@ -6,6 +6,7 @@
 //    All rights reserved.
 //
 ////////////////////////////////////////////////////////////////////////////////
+import ConfigurableUI from './configurable-ui';
 
 /**
  * 通知消息的具体实现类。
@@ -14,7 +15,7 @@
  *
  * @author 胡海星
  */
-class NotifyImpl {
+class NotifyImpl extends ConfigurableUI {
   /**
    * 显示一条通知消息。
    *

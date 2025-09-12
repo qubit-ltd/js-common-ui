@@ -76,12 +76,19 @@ class Loading {
    * @param {LoadingImpl} impl
    *     `Loading`类的具体实现对象。这个参数必须是一个`LoadingImpl`类的子类的实例，不同的
    *     `LoadingImpl`类的实例可以实现不同的UI框架的载入提示遮盖层功能。
+   * @param {Object} config
+   *     可选的配置对象，暂时没有支持的属性，但未来可以扩展支持更多配置选项。
+   * @see ConfigurableUI
    */
-  setImpl(impl) {
+  setImpl(impl, config = null) {
     if (!(impl instanceof LoadingImpl)) {
       throw new Error('参数`impl`必须是`LoadingImpl`的子类的实例');
     }
     this.impl = impl;
+    // 如果提供了配置，则应用到实现对象
+    if (config) {
+      this.impl.configure(config);
+    }
   }
 
   /**

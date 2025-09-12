@@ -74,19 +74,34 @@ class Confirm {
   /**
    * 设置`Confirm`类的具体实现类。
    *
-   * 这个方法用于注入在不同的UI框架中实现的不同的`AlertImpl`类。
+   * 这个方法用于注入在不同的UI框架中实现的不同的`ConfirmImpl`类。
    *
    * 注意：这个方法必须在应用初始化时调用一次，且仅需调用一次。
    *
    * @param {ConfirmImpl} impl
    *     `Confirm`类的具体实现对象。这个参数必须是一个`ConfirmImpl`类的子类的实例，不同的
    *     `ConfirmImpl`类的实例可以实现不同的UI框架的弹出式确认对话框功能。
+   * @param {Object} config
+   *     可选的配置对象，支持以下属性：
+   *     - `iconClassMap` {Object} 图标CSS类映射表，格式为：
+   *       {
+   *         'info': 'fa-solid fa-info',
+   *         'error': 'fa-solid fa-times-circle',
+   *         'warn': 'fa-solid fa-exclamation-triangle',
+   *         'success': 'fa-solid fa-check-circle',
+   *         'debug': 'fa-solid fa-bug'
+   *       }
+   * @see ConfigurableUI
    */
-  setImpl(impl) {
+  setImpl(impl, config = null) {
     if (!(impl instanceof ConfirmImpl)) {
       throw new Error('参数`impl`必须是`ConfirmImpl`的子类的实例');
     }
     this.impl = impl;
+    // 如果提供了配置，则应用到实现对象
+    if (config) {
+      this.impl.configure(config);
+    }
   }
 
   /**
@@ -221,6 +236,11 @@ class Confirm {
   }
 }
 
+/**
+ * 全局公用的`Confirm`对象。
+ *
+ * @type {Confirm}
+ */
 const confirm = new Confirm();
 
 export default confirm;

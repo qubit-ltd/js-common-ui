@@ -19,6 +19,102 @@ npm install @qubit-ltd/common-ui
 yarn add @qubit-ltd/common-ui
 ```
 
+## 自定义图标配置
+
+从 v1.15.0 开始，`@qubit-ltd/common-ui` 支持自定义图标配置功能。您可以为不同的消息类型配置自定义的图标CSS类名。
+
+### 基本配置
+
+```javascript
+import { alert, confirm, notify, prompt } from '@qubit-ltd/common-ui';
+import { QuasarAlertImpl, QuasarConfirmImpl } from '@qubit-ltd/common-ui-quasar';
+
+// 配置自定义图标
+const iconConfig = {
+  iconClassMap: {
+    'info': 'fa-solid fa-info-circle',
+    'success': 'fa-solid fa-check-circle',
+    'warn': 'fa-solid fa-exclamation-triangle',
+    'error': 'fa-solid fa-times-circle',
+    'debug': 'fa-solid fa-bug'
+  }
+};
+
+// 在设置实现时传入配置
+alert.setImpl(new QuasarAlertImpl(Dialog), iconConfig);
+confirm.setImpl(new QuasarConfirmImpl(Dialog), iconConfig);
+```
+
+### 部分自定义配置
+
+您只需要配置想要自定义的图标类型，其他类型将使用默认图标：
+
+```javascript
+// 只自定义错误和成功图标
+const partialConfig = {
+  iconClassMap: {
+    'error': 'fa-solid fa-skull-crossbones',
+    'success': 'fa-solid fa-thumbs-up'
+  }
+};
+
+alert.setImpl(new QuasarAlertImpl(Dialog), partialConfig);
+```
+
+### 支持的图标库
+
+您可以使用任何CSS图标库：
+
+```javascript
+// FontAwesome 图标
+const fontAwesomeConfig = {
+  iconClassMap: {
+    'info': 'fa-solid fa-circle-info',
+    'error': 'fa-solid fa-circle-xmark'
+  }
+};
+
+// Bootstrap Icons
+const bootstrapConfig = {
+  iconClassMap: {
+    'info': 'bi bi-info-circle-fill',
+    'error': 'bi bi-x-circle-fill'
+  }
+};
+
+// Material Icons
+const materialConfig = {
+  iconClassMap: {
+    'info': 'material-icons',
+    'error': 'material-icons'
+  }
+};
+```
+
+### 向后兼容
+
+不提供配置时，完全保持原有行为：
+
+```javascript
+// 原有方式，使用默认图标
+alert.setImpl(new QuasarAlertImpl(Dialog));
+```
+
+### 运行时配置更新
+
+您也可以在运行时更新配置：
+
+```javascript
+// 获取当前实现并更新配置
+const impl = alert.getImpl();
+impl.configure({
+  iconClassMap: {
+    'info': 'new-info-icon',
+    'error': 'new-error-icon'
+  }
+});
+```
+
 ## 组件说明
 
 ### Alert 警告框
@@ -30,6 +126,14 @@ import { alert } from '@qubit-ltd/common-ui';
 
 // 设置实现对象（根据您使用的UI框架选择适当的实现）
 alert.setImpl(yourAlertImpl);
+
+// 或者设置实现对象时同时配置自定义图标
+alert.setImpl(yourAlertImpl, {
+  iconClassMap: {
+    'info': 'fa-solid fa-info-circle',
+    'error': 'fa-solid fa-times-circle'
+  }
+});
 
 // 显示不同类型的警告框
 alert.info('信息标题', '这是一条信息内容');
@@ -59,6 +163,14 @@ import { confirm } from '@qubit-ltd/common-ui';
 
 // 设置实现对象（根据您使用的UI框架选择适当的实现）
 confirm.setImpl(yourConfirmImpl);
+
+// 或者设置实现对象时同时配置自定义图标
+confirm.setImpl(yourConfirmImpl, {
+  iconClassMap: {
+    'warn': 'fa-solid fa-exclamation-triangle',
+    'error': 'fa-solid fa-times-circle'
+  }
+});
 
 // 使用不同类型的确认框
 confirm.info('信息标题', '是否确认继续?')
@@ -95,6 +207,14 @@ import { prompt } from '@qubit-ltd/common-ui';
 // 设置实现对象（根据您使用的UI框架选择适当的实现）
 prompt.setImpl(yourPromptImpl);
 
+// 或者设置实现对象时同时配置自定义图标
+prompt.setImpl(yourPromptImpl, {
+  iconClassMap: {
+    'info': 'fa-solid fa-question-circle',
+    'error': 'fa-solid fa-exclamation-circle'
+  }
+});
+
 // 使用不同类型的输入框
 prompt.info('信息输入', '请输入您的姓名:')
   .then((value) => {
@@ -129,6 +249,14 @@ import { notify } from '@qubit-ltd/common-ui';
 
 // 设置实现对象（根据您使用的UI框架选择适当的实现）
 notify.setImpl(yourNotifyImpl);
+
+// 或者设置实现对象时同时配置自定义图标
+notify.setImpl(yourNotifyImpl, {
+  iconClassMap: {
+    'success': 'fa-solid fa-check',
+    'error': 'fa-solid fa-times'
+  }
+});
 
 // 显示不同类型的通知
 notify.info('这是一条信息通知');
@@ -171,6 +299,13 @@ import { loading } from '@qubit-ltd/common-ui';
 // 设置实现对象（根据您使用的UI框架选择适当的实现）
 loading.setImpl(yourLoadingImpl);
 
+// Loading组件主要用于显示加载状态，通常不需要图标配置
+// 但您也可以配置其他选项（如主题、动画等）
+loading.setImpl(yourLoadingImpl, {
+  theme: 'dark',
+  animation: 'spin'
+});
+
 // 显示自定义加载提示
 loading.show('正在加载数据...');
 
@@ -200,11 +335,11 @@ loading.disable();
 库还提供了一些辅助函数，用于获取不同UI框架的图标和颜色：
 
 ```javascript
-import { 
-  getBootstrapIcon, 
-  getFontAwesomeIcon, 
+import {
+  getBootstrapIcon,
+  getFontAwesomeIcon,
   getMaterialSymbolIcon,
-  getCssColor 
+  getCssColor
 } from '@qubit-ltd/common-ui';
 
 // 获取Bootstrap图标名称
@@ -220,6 +355,108 @@ const materialSuccessIcon = getMaterialSymbolIcon('success');  // 'check_circle'
 const errorColorClass = getCssColor('error');  // 'text-danger'
 ```
 
+## 配置API参考
+
+### ConfigurableUI 基类
+
+所有UI实现类都继承自 `ConfigurableUI` 基类，提供统一的配置管理功能：
+
+```javascript
+import { ConfigurableUI } from '@qubit-ltd/common-ui';
+
+class MyCustomImpl extends ConfigurableUI {
+  constructor() {
+    super(); // 调用基类构造函数
+  }
+
+  someMethod() {
+    // 获取自定义图标
+    const customIcon = this.getCustomIcon('info');
+    if (customIcon) {
+      // 使用自定义图标
+      return `<i class="${customIcon}"></i>`;
+    } else {
+      // 使用默认图标
+      return this.getDefaultIcon('info');
+    }
+  }
+}
+```
+
+### 配置方法
+
+#### `configure(config)`
+
+配置UI组件的选项：
+
+```javascript
+impl.configure({
+  iconClassMap: {
+    'info': 'fa-solid fa-info-circle',
+    'error': 'fa-solid fa-times-circle'
+  },
+  theme: 'dark',
+  animation: 'fade'
+});
+```
+
+#### `getCustomIcon(type)`
+
+获取指定消息类型的自定义图标CSS类名：
+
+```javascript
+const iconClass = impl.getCustomIcon('error');
+// 返回: 'fa-solid fa-times-circle' 或 null（如果未配置）
+```
+
+#### `getConfigValue(key, defaultValue)`
+
+获取配置项的值：
+
+```javascript
+const theme = impl.getConfigValue('theme', 'light');
+const timeout = impl.getConfigValue('timeout', 3000);
+```
+
+#### `getConfig()`
+
+获取完整配置对象的副本：
+
+```javascript
+const config = impl.getConfig();
+console.log(config); // { iconClassMap: {...}, theme: 'dark', ... }
+```
+
+### 配置对象结构
+
+```javascript
+const config = {
+  // 图标配置（所有组件支持）
+  iconClassMap: {
+    'info': 'CSS类名',      // 信息图标
+    'success': 'CSS类名',   // 成功图标
+    'warn': 'CSS类名',      // 警告图标
+    'error': 'CSS类名',     // 错误图标
+    'debug': 'CSS类名'      // 调试图标
+  },
+
+  // 其他配置项（根据具体实现支持）
+  theme: 'light|dark',           // 主题
+  animation: 'fade|slide|none',  // 动画效果
+  position: 'top|bottom|center', // 位置
+  timeout: 3000,                 // 超时时间
+  // ... 更多配置项
+};
+```
+
+### 支持的消息类型
+
+- `info`: 信息消息
+- `success`: 成功消息
+- `warn`: 警告消息
+- `error`: 错误消息
+- `debug`: 调试消息
+
 ## 实现自定义UI组件
 
 本库提供了抽象层接口，您需要根据自己使用的前端框架提供具体实现。以下是实现示例：
@@ -232,7 +469,7 @@ class MyFrameworkNotifyImpl extends NotifyImpl {
   show(type, message, options) {
     // 在您的UI框架中实现通知显示逻辑
     console.log(`显示${type}类型通知: ${message}`, options);
-    
+
     // 例如，调用框架的Toast组件:
     MyFrameworkToast.show({
       type: type,
