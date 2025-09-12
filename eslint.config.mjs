@@ -7,10 +7,11 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-module.exports = {
-  root: true,
-  parser: '@babel/eslint-parser',
-  extends: [
-    '@qubit-ltd/eslint-config',
-  ],
-};
+import qubitConfig from '@qubit-ltd/eslint-config';
+
+export default [
+  ...qubitConfig,
+  {
+    files: ['src/**/*.js'],
+  },
+];
