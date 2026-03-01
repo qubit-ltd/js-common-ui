@@ -180,6 +180,19 @@ describe('Alert', () => {
     expect(mockImpl.showCalls.length).toBe(0); // 不应该调用实现
   });
 
+  test('show方法应该调用loading.clear', async () => {
+    // 监听loading.clear方法
+    const clearSpy = jest.spyOn(loading, 'clear');
+
+    const promise = alert.show('info', '测试标题', '测试消息');
+    expect(clearSpy).toHaveBeenCalled();
+
+    mockImpl.resolveLastCall();
+    await promise;
+
+    clearSpy.mockRestore();
+  });
+
   test('未设置实现对象时show方法应该返回rejected Promise', async () => {
     alert.impl = null;
 

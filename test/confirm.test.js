@@ -233,6 +233,12 @@ describe('Confirm', () => {
       .toThrow('未设置`Confirm`类的具体实现对象');
   });
 
+  test('show方法应该调用loading.clear', () => {
+    confirm.show('info', '测试标题', '测试消息');
+    
+    expect(mockLoadingImpl.hideCalls).toBe(1);
+  });
+
   test('setImpl方法应该验证参数类型', () => {
     expect(() => confirm.setImpl({})).toThrow('参数`impl`必须是`ConfirmImpl`的子类的实例');
     expect(() => confirm.setImpl(null)).toThrow('参数`impl`必须是`ConfirmImpl`的子类的实例');
