@@ -2,8 +2,8 @@
 
 [![npm package](https://img.shields.io/npm/v/@qubit-ltd/common-ui.svg)](https://npmjs.com/package/@qubit-ltd/common-ui)
 [![License](https://img.shields.io/badge/License-Apache-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/Haixing-Hu/js-common-ui/tree/master.svg?style=shield)](https://dl.circleci.com/status-badge/redirect/gh/Haixing-Hu/js-common-ui/tree/master)
-[![Coverage Status](https://coveralls.io/repos/github/Haixing-Hu/js-common-ui/badge.svg?branch=master)](https://coveralls.io/github/Haixing-Hu/js-common-ui?branch=master)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/qubit-ltd/js-common-ui/tree/master.svg?style=shield)](https://dl.circleci.com/status-badge/redirect/gh/qubit-ltd/js-common-ui/tree/master)
+[![Coverage Status](https://coveralls.io/repos/github/qubit-ltd/js-common-ui/badge.svg?branch=master)](https://coveralls.io/github/qubit-ltd/js-common-ui?branch=master)
 
 [@qubit-ltd/common-ui] 是一个用于常见UI组件的JavaScript抽象层。该库提供了一组与框架无关的UI组件抽象接口，使您可以在不同的前端框架下使用统一的API来处理常见UI交互。
 
@@ -495,4 +495,4 @@ notify.setImpl(new MyFrameworkNotifyImpl());
 有关更多详细信息，请参阅[LICENSE](LICENSE)文件。
 
 [@qubit-ltd/common-ui]: https://npmjs.com/package/@qubit-ltd/common-ui
-[GitHub仓库]: https://github.com/Haixing-Hu/js-common-ui
+[GitHub仓库]: https://github.com/qubit-ltd/js-common-ui
