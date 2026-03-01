@@ -150,7 +150,7 @@ class Notify {
    *     - `closeable` {boolean} 是否显示关闭消息按钮。默认值为`true`。
    *     - `closeAction` {function} 关闭消息按钮的点击处理函数。默认值为`() => {}`。
    *     - `showDetail` {boolean} 是否显示详细信息按钮。默认值为`false`。
-   *     - `detailLabel` {string} 详细信息按钮上的文本。默认值为`'显示详情'`。
+   *     - `detailLabel` {string} 详细信息按钮上的文本。默认值为`'详情'`。
    *     - `detailAction` {function} 详细信息按钮的点击处理函数。默认值为`() => {}`。
    */
   show(type, message, options = {}) {
@@ -212,7 +212,7 @@ class Notify {
    *     - `closeable` {boolean} 是否显示关闭消息按钮。默认值为`true`。
    *     - `closeAction` {function} 关闭消息按钮的点击处理函数。默认值为`null`。
    *     - `showDetail` {boolean} 是否显示详细信息按钮。默认值为`false`。
-   *     - `detailLabel` {string} 详细信息按钮上的文本。默认值为`'显示详情'`。
+   *     - `detailLabel` {string} 详细信息按钮上的文本。默认值为`'详情'`。
    *     - `detailAction` {function} 详细信息按钮的点击处理函数。默认值为`null`。
    */
   info(message, options = {}) {
@@ -235,7 +235,7 @@ class Notify {
    *     - `closeable` {boolean} 是否显示关闭消息按钮。默认值为`true`。
    *     - `closeAction` {function} 关闭消息按钮的点击处理函数。默认值为`null`。
    *     - `showDetail` {boolean} 是否显示详细信息按钮。默认值为`false`。
-   *     - `detailLabel` {string} 详细信息按钮上的文本。默认值为`'显示详情'`。
+   *     - `detailLabel` {string} 详细信息按钮上的文本。默认值为`'详情'`。
    *     - `detailAction` {function} 详细信息按钮的点击处理函数。默认值为`null`。
    */
   warn(message, options = {}) {
@@ -258,7 +258,7 @@ class Notify {
    *     - `closeable` {boolean} 是否显示关闭消息按钮。默认值为`true`。
    *     - `closeAction` {function} 关闭消息按钮的点击处理函数。默认值为`null`。
    *     - `showDetail` {boolean} 是否显示详细信息按钮。默认值为`false`。
-   *     - `detailLabel` {string} 详细信息按钮上的文本。默认值为`'显示详情'`。
+   *     - `detailLabel` {string} 详细信息按钮上的文本。默认值为`'详情'`。
    *     - `detailAction` {function} 详细信息按钮的点击处理函数。默认值为`null`。
    */
   error(message, options = {}) {
@@ -281,7 +281,7 @@ class Notify {
    *     - `closeable` {boolean} 是否显示关闭消息按钮。默认值为`true`。
    *     - `closeAction` {function} 关闭消息按钮的点击处理函数。默认值为`null`。
    *     - `showDetail` {boolean} 是否显示详细信息按钮。默认值为`false`。
-   *     - `detailLabel` {string} 详细信息按钮上的文本。默认值为`'显示详情'`。
+   *     - `detailLabel` {string} 详细信息按钮上的文本。默认值为`'详情'`。
    *     - `detailAction` {function} 详细信息按钮的点击处理函数。默认值为`null`。
    */
   success(message, options = {}) {
@@ -304,7 +304,7 @@ class Notify {
    *     - `closeable` {boolean} 是否显示关闭消息按钮。默认值为`true`。
    *     - `closeAction` {function} 关闭消息按钮的点击处理函数。默认值为`null`。
    *     - `showDetail` {boolean} 是否显示详细信息按钮。默认值为`false`。
-   *     - `detailLabel` {string} 详细信息按钮上的文本。默认值为`'显示详情'`。
+   *     - `detailLabel` {string} 详细信息按钮上的文本。默认值为`'详情'`。
    *     - `detailAction` {function} 详细信息按钮的点击处理函数。默认值为`null`。
    * @see enableDebug
    * @see disableDebug

@@ -206,7 +206,7 @@ class Alert {
    *     对话框中的文字内容。
    * @return {Promise<void>}
    *     一个`Promise`对象，当用户点击对话框的`OK`按键后，可以接着`then`继续下一步操作。
-   *     如果此对象被禁用，则返回一个`rejected`状态的`Promise`对象。
+   *     如果此对象被禁用，则返回一个`resolved`状态的`Promise`对象。
    */
   warn(title, message) {
     return this.show('warn', title, message);
@@ -221,7 +221,7 @@ class Alert {
    *     对话框中的文字内容。
    * @return {Promise<void>}
    *     一个`Promise`对象，当用户点击对话框的`OK`按键后，可以接着`then`继续下一步操作。
-   *     如果此对象被禁用，则返回一个`rejected`状态的`Promise`对象。
+   *     如果此对象被禁用，则返回一个`resolved`状态的`Promise`对象。
    */
   error(title, message) {
     return this.show('error', title, message);
@@ -236,7 +236,7 @@ class Alert {
    *     对话框中的文字内容。
    * @return {Promise<void>}
    *     一个`Promise`对象，当用户点击对话框的`OK`按键后，可以接着`then`继续下一步操作。
-   *     如果此对象被禁用，则返回一个`rejected`状态的`Promise`对象。
+   *     如果此对象被禁用，则返回一个`resolved`状态的`Promise`对象。
    */
   success(title, message) {
     return this.show('success', title, message);
@@ -249,7 +249,7 @@ class Alert {
    *     调试信息。
    * @return {Promise<void>}
    *     一个`Promise`对象，当用户点击对话框的`OK`按键后，可以接着`then`继续下一步操作。
-   *     如果此对象被禁用，或者其调试模式被禁用，则返回一个`rejected`状态的`Promise`对象。
+   *     如果此对象被禁用，或者其调试模式被禁用，则返回一个`resolved`状态的`Promise`对象。
    * @see enableDebug
    * @see disableDebug
    * @see isDebugEnabled
