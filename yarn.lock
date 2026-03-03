@@ -2210,10 +2210,10 @@ __metadata:
     "@babel/preset-typescript": "npm:^7.27.1"
     "@babel/runtime": "npm:^7.28.4"
     "@jest/core": "npm:^30.1.3"
-    "@qubit-ltd/eslint-config": "npm:^2.0.1"
-    "@qubit-ltd/jsdoc-theme": "npm:^1.5.2"
-    "@qubit-ltd/logging": "npm:^1.4.15"
-    "@qubit-ltd/rollup-builder": "npm:^1.8.14"
+    "@qubit-ltd/eslint-config": "npm:^2.0.2"
+    "@qubit-ltd/jsdoc-theme": "npm:^1.5.3"
+    "@qubit-ltd/logging": "npm:^1.4.16"
+    "@qubit-ltd/rollup-builder": "npm:^1.8.15"
     "@rollup/plugin-alias": "npm:^6.0.0"
     "@rollup/plugin-babel": "npm:^6.1.0"
     "@rollup/plugin-commonjs": "npm:^29.0.0"
@@ -2240,24 +2240,24 @@ __metadata:
     vue-eslint-parser: "npm:^10.2.0"
   peerDependencies:
     "@babel/runtime": ^7.28.4
-    "@qubit-ltd/logging": ^1.4.15
+    "@qubit-ltd/logging": ^1.4.16
   languageName: unknown
   linkType: soft
 
-"@qubit-ltd/eslint-config@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "@qubit-ltd/eslint-config@npm:2.0.1"
+"@qubit-ltd/eslint-config@npm:^2.0.2":
+  version: 2.0.2
+  resolution: "@qubit-ltd/eslint-config@npm:2.0.2"
   dependencies:
     "@eslint/js": "npm:^9.35.0"
     eslint: "npm:^9.35.0"
     eslint-plugin-import: "npm:^2.31.0"
-  checksum: 568956019d4766c17f46a0758638c879d6ad2a8c88ebd5a015a7140d4cb1477ef181a6ca52cd8a35d78f1c0de47b632c5a0c50bc45063a21d519e49aeba09eb6
+  checksum: b6aab544fe100520b9611e1bc8b1c06c5a750c7118fa60d035b76f10b162b27aa91ab393ad21a8ec77c6368d2703ff414365eef9f057286a445d817243a16f29
   languageName: node
   linkType: hard
 
-"@qubit-ltd/jsdoc-theme@npm:^1.5.2":
-  version: 1.5.2
-  resolution: "@qubit-ltd/jsdoc-theme@npm:1.5.2"
+"@qubit-ltd/jsdoc-theme@npm:^1.5.3":
+  version: 1.5.3
+  resolution: "@qubit-ltd/jsdoc-theme@npm:1.5.3"
   dependencies:
     "@jsdoc/salty": "npm:^0.2.4"
     fs-extra: "npm:^10.1.0"
@@ -2267,22 +2267,22 @@ __metadata:
     showdown: "npm:^2.1.0"
   peerDependencies:
     jsdoc: ">=3.x <=4.x"
-  checksum: c77ada44b7cd283259ff0801103900eb373639ec2332a3a8bf2f292246f68828e1ae9df266282ee01ee4fb659226e3c254090bb751d1fa1e0efdcea14c921df1
+  checksum: 323d34d3c64f6394f4d4b71fe37ed54cc8f24358630d106c7637fd13b11b360f6db9d29e6d16704bfabec3c03bd82f8faaa093cf8b8ec4eaff6a9c59bc7611b3
   languageName: node
   linkType: hard
 
-"@qubit-ltd/logging@npm:^1.4.15":
-  version: 1.4.15
-  resolution: "@qubit-ltd/logging@npm:1.4.15"
+"@qubit-ltd/logging@npm:^1.4.16":
+  version: 1.4.16
+  resolution: "@qubit-ltd/logging@npm:1.4.16"
   dependencies:
     "@babel/runtime": "npm:^7.28.4"
-  checksum: 62501604b9d6d985a8a9c94445af2444a029ddfc0e8e5b56f11516c71b8883ea6948160b46745a8aa15c6fe3d9bc33b79e8f2eaf5a0e2922ef16c4c7623c59e0
+  checksum: 6d536214ccfff1ee1821d8f44c287a752613bde30c51366b8012607b19a55c5c1f1dcfd3375af56896ac1b913a5853f6943d637524352fffa73123152ffb29e5
   languageName: node
   linkType: hard
 
-"@qubit-ltd/rollup-builder@npm:^1.8.14":
-  version: 1.8.14
-  resolution: "@qubit-ltd/rollup-builder@npm:1.8.14"
+"@qubit-ltd/rollup-builder@npm:^1.8.15":
+  version: 1.8.15
+  resolution: "@qubit-ltd/rollup-builder@npm:1.8.15"
   peerDependencies:
     "@babel/core": ^7.28.5
     "@babel/plugin-transform-runtime": ^7.28.5
@@ -2297,7 +2297,7 @@ __metadata:
     rollup: ^4.53.3
     rollup-plugin-analyzer: ^4.0.0
     rollup-plugin-visualizer: ^6.0.5
-  checksum: dad45782af905bae72b2e1394b43d6763362eccc70f5519773ff1c8ba79ca816880ef1259ef64113721035c7fca49f1602c465738b06848775629ccf6fc02c3c
+  checksum: 058faee5c674c14922ea62b1c787ee9e19110f9ef943c6ea396471d87a4891385722e4e4cca9d5361bf3d1c32c029d252143804eda33291d8639ac9e2b2a9b46
   languageName: node
   linkType: hard
 
